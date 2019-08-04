@@ -1,0 +1,16 @@
+<%= form_tag("/login", method: "post") do %>
+  
+  <% flash.each do |message_type, message| %>
+        <aside class="alert alert-<%= message_type %>"><%= message %></aside>
+      <% end %>
+
+  <p><%= label_tag(:login, "login:") %>
+  <%= text_field_tag :login, nil, :required => true %></p>
+
+  <p><%= label_tag(:password, "password:") %>
+  <%= password_field_tag :password, nil, :required => true %></p>
+  <nav>
+    <%= link_to "Back", action: "index" %>
+    <%= submit_tag("Login") %>
+  </nav>
+<% end %>

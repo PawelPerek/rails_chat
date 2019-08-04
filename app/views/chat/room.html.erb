@@ -1,0 +1,25 @@
+<header>
+    <h1>Chat room</h1>
+    <a href="/logoff">Logoff</a>
+</header>
+<div id="chat"></div>
+<footer>
+    <input id="msg">
+    <button id="sub"> Submit </button>
+</footer>
+
+<script>
+
+    function send() {
+        if(msg.value != "") {
+            App.chat.send_message(msg.value)
+            msg.value=""
+        }
+    }
+    sub.addEventListener("click", send);
+    addEventListener("keypress", e => {
+        if(e.key == "Enter") {
+            send();
+        }
+    })
+</script>
