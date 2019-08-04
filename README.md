@@ -1,3 +1,1 @@
-# README
 
-# rails_chat
